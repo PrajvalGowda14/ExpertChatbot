@@ -86,7 +86,12 @@ People often struggle to find reliable, expert-level advice across various niche
 
 ## 📸 Screenshots
 
-(Add here once available: Chat UI, topic selection screen, response example)
+<img width="888" alt="Screenshot 2025-05-31 at 8 25 15 AM" src="https://github.com/user-attachments/assets/012b321e-e3b3-46c0-82ed-f47630fcb83e" />
+<img width="923" alt="Screenshot 2025-05-31 at 9 55 43 AM" src="https://github.com/user-attachments/assets/0e62aae9-4f8d-4e11-9cb9-fa3cf70e9751" />
+<img width="1058" alt="Screenshot 2025-05-31 at 9 54 42 AM" src="https://github.com/user-attachments/assets/fa0acd6d-6848-4f50-89ce-c64d8a7bd3dd" />
+
+
+
 
 ---
 
