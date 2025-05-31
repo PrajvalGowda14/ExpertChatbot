@@ -1,1 +1,101 @@
-# ExpertChatbot
+# Expert Chatbot - GenBot Expo 2025 Submission
+
+## 🔍 Project Overview
+
+Expert Chatbot is a web-based generative AI system that enables users to interact with specialized AI personas in real-time. It utilizes the Cohere Command LLM to simulate domain-specific experts such as:
+
+* ♟️ Chess Coach
+* 📸 Vintage Camera Expert
+* 🏁 Formula 1 Analyst
+* 🧠 Trivia Master
+* 🏋️‍♂️ Fitness Coach
+* ✍️ Custom Chatbot (defined by the user)
+
+This project showcases how prompt engineering and dynamic UI/UX design can empower users to create and interact with expert systems without needing technical knowledge.
+
+---
+
+## 🎯 Problem Statement & Relevance
+
+People often struggle to find reliable, expert-level advice across various niche domains. Expert Chatbot bridges this gap by enabling direct conversation with domain-trained AI personas, removing the need for endless search results or forums. It also provides a flexible "custom expert" mode for tailored use cases, making it practical for:
+
+* Education
+* Personal development
+* Hobbyist research
+
+---
+
+## 🧠 GenAI Integration & Innovation
+
+* **API:** Uses Cohere's `command` model for natural, responsive dialogue.
+* **Prompt Engineering:** Each topic includes a detailed system prompt that guides the chatbot's personality and knowledge scope.
+* **Custom Mode:** Users can input their own instructions to create a unique chatbot persona.
+* **Contextual Memory:** Maintains chat history per session for better continuity.
+
+---
+
+## ⚙️ Features & Functionality
+
+* ✅ Multiple expert profiles with tailored prompts
+* ✅ Dynamic SVG-based themed UI per expert
+* ✅ Real-time chat interface
+* ✅ Chat history context retained in requests
+* ✅ Error handling (missing API key, empty prompts, etc.)
+* ✅ Loading spinner and reset mechanism
+
+---
+
+## 🎨 User Experience Highlights
+
+* Minimalist layout with rich animations and iconography
+* Color-coded expert identities
+* Responsive, mobile-friendly design
+* Easy-to-understand setup with clear feedback
+
+---
+
+## 📁 Project Structure
+
+* `index.html` — main UI and logic
+* `style.css` — embedded styling and animations
+* `script.js` — embedded in HTML for client-side chat logic
+
+---
+
+## 🚀 How to Use
+
+1. Open the `c.html` file in a modern browser.
+2. Enter your [Cohere API Key](https://cohere.ai/).
+3. Choose a topic or define your own custom chatbot.
+4. Start chatting and get expert answers in real-time!
+
+---
+
+## 📌 Future Enhancements
+
+* Add voice/speech-to-text integration
+* Deploy to GitHub Pages / Netlify
+* Enable persistent session storage
+* Support image and file uploads for certain experts
+
+---
+
+## 🤝 Team Contributions
+
+* **UI/UX Design & Frontend:** \[Your Name]
+* **LLM Integration & Prompt Design:** \[Your Name]
+* **Testing & Error Handling:** \[Your Name]
+
+> Built as part of the 6th Semester Generative AI Project for GenBot Expo 2025.
+
+---
+
+## 📸 Screenshots
+
+(Add here once available: Chat UI, topic selection screen, response example)
+
+---
+
+## 📄 License
+
+MIT License
