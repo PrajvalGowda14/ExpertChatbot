@@ -57,8 +57,8 @@ People often struggle to find reliable, expert-level advice across various niche
 ## 📁 Project Structure
 
 * `index.html` — main UI and logic
-* `style.css` — embedded styling and animations
-* `script.js` — embedded in HTML for client-side chat logic
+* `main.css` — embedded styling and animations
+* `main.js` — embedded in HTML for client-side chat logic
 
 ---
 
