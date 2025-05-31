@@ -1,7 +1,7 @@
 # Expert Chatbot - GenBot Expo 2025 Submission
 
 ## 🔍 Project Overview
-
+ 
 Expert Chatbot is a web-based generative AI system that enables users to interact with specialized AI personas in real-time. It utilizes the Cohere Command LLM to simulate domain-specific experts such as:
 
 * ♟️ Chess Coach
