@@ -7,8 +7,8 @@ Expert Chatbot is a web-based generative AI system that enables users to interac
 * ♟️ Chess Coach
 * 📸 Vintage Camera Expert
 * 🏁 Formula 1 Analyst
-* 🧠 Trivia Master
 * 🏋️‍♂️ Fitness Coach
+* 🧠 Tech Advisor
 * ✍️ Custom Chatbot (defined by the user)
 
 This project showcases how prompt engineering and dynamic UI/UX design can empower users to create and interact with expert systems without needing technical knowledge.
@@ -64,7 +64,7 @@ People often struggle to find reliable, expert-level advice across various niche
 
 ## 🚀 How to Use
 
-1. Open the `c.html` file in a modern browser.
+1. Open the `index.html` file in a modern browser.
 2. Enter your [Cohere API Key](https://cohere.ai/).
 3. Choose a topic or define your own custom chatbot.
 4. Start chatting and get expert answers in real-time!
@@ -79,12 +79,6 @@ People often struggle to find reliable, expert-level advice across various niche
 * Support image and file uploads for certain experts
 
 ---
-
-## 🤝 Team Contributions
-
-* **UI/UX Design & Frontend:** \[Your Name]
-* **LLM Integration & Prompt Design:** \[Your Name]
-* **Testing & Error Handling:** \[Your Name]
 
 > Built as part of the 6th Semester Generative AI Project for GenBot Expo 2025.
 
