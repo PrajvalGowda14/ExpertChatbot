@@ -1,0 +1,654 @@
+:root {
+    /* Base colors - light theme */
+    --bg-color: #ffffff;
+    --text-color: #1f2937;
+    --text-secondary: #6b7280;
+    --border-color: #e5e7eb;
+    --card-bg: #ffffff;
+    --input-bg: #f9fafb;
+    
+    /* Expert colors */
+    --expert-chess: #2563EB;
+    --expert-photography: #9333EA;
+    --expert-f1: #DC2626;
+    --expert-fitness: #059669;
+    --expert-tech: #7C3AED;
+    --expert-custom: #6366F1;
+    
+    /* Theme toggler */
+    --theme-toggle-bg: #f3f4f6;
+    --theme-toggle-icon: #1f2937;
+    
+    /* Shadows */
+    --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
+    --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    --shadow-md: 0 10px 15px rgba(0, 0, 0, 0.1);
+    --shadow-lg: 0 20px 25px rgba(0, 0, 0, 0.1);
+    
+    /* Border radius */
+    --radius-sm: 4px;
+    --radius: 8px;
+    --radius-md: 12px;
+    --radius-lg: 16px;
+    --radius-xl: 24px;
+    --radius-full: 9999px;
+    
+    /* Spacing */
+    --space-xs: 4px;
+    --space-sm: 8px;
+    --space-md: 16px;
+    --space-lg: 24px;
+    --space-xl: 32px;
+    --space-2xl: 48px;
+    
+    /* Theme transitions */
+    --theme-transition: all 0.3s ease;
+}
+
+[data-theme="dark"] {
+    --bg-color: #111827;
+    --text-color: #f3f4f6;
+    --text-secondary: #9ca3af;
+    --border-color: #374151;
+    --card-bg: #1f2937;
+    --input-bg: #1f2937;
+    --theme-toggle-bg: #374151;
+    --theme-toggle-icon: #f3f4f6;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    line-height: 1.6;
+    min-height: 100vh;
+    padding: var(--space-xl);
+    transition: var(--theme-transition);
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    background: var(--card-bg);
+    border-radius: var(--radius-xl);
+    box-shadow: var(--shadow-lg);
+    overflow: hidden;
+    transition: var(--theme-transition);
+}
+
+/* Header Styles */
+.header {
+    padding: var(--space-xl);
+    text-align: center;
+    background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+    color: white;
+    position: relative;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-sm);
+    margin-bottom: var(--space-md);
+}
+
+.logo svg {
+    width: 32px;
+    height: 32px;
+}
+
+.logo h1 {
+    font-size: 1.75rem;
+    font-weight: 700;
+}
+
+.header p {
+    opacity: 0.9;
+    font-size: 1rem;
+    max-width: 80%;
+    margin: 0 auto;
+}
+
+/* Theme Toggle */
+.theme-toggle {
+    position: absolute;
+    top: var(--space-lg);
+    right: var(--space-lg);
+    background: var(--theme-toggle-bg);
+    border: none;
+    border-radius: var(--radius-full);
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: var(--theme-transition);
+    z-index: 10;
+}
+
+.theme-toggle svg {
+    width: 20px;
+    height: 20px;
+    color: var(--theme-toggle-icon);
+    transition: var(--theme-transition);
+}
+
+/* Card Styles */
+.card {
+    background: var(--card-bg);
+    border-radius: var(--radius-lg);
+    padding: var(--space-xl);
+    margin-bottom: var(--space-xl);
+    box-shadow: var(--shadow-sm);
+    border: 1px solid var(--border-color);
+    transition: var(--theme-transition);
+}
+
+.intro-card {
+    background: linear-gradient(135deg, var(--primary-light) 0%, rgba(99, 102, 241, 0.1) 100%);
+    border: none;
+}
+
+.card h2 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: var(--space-lg);
+    color: var(--text-color);
+    display: flex;
+    align-items: center;
+    gap: var(--space-sm);
+    transition: var(--theme-transition);
+}
+
+.card h2 svg {
+    width: 20px;
+    height: 20px;
+}
+
+/* Input Styles */
+.input-group {
+    margin-bottom: var(--space-lg);
+}
+
+label {
+    display: block;
+    margin-bottom: var(--space-sm);
+    font-weight: 500;
+    color: var(--text-color);
+    font-size: 0.875rem;
+    transition: var(--theme-transition);
+}
+
+input, textarea, select {
+    width: 100%;
+    padding: var(--space-md) var(--space-lg);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius);
+    font-size: 1rem;
+    transition: var(--theme-transition);
+    background-color: var(--input-bg);
+    color: var(--text-color);
+}
+
+input:focus, textarea:focus {
+    outline: none;
+    border-color: var(--primary);
+    box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.2);
+}
+
+/* Topic Grid */
+.topics-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: var(--space-lg);
+    margin-top: var(--space-lg);
+}
+
+.topic-card {
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-lg);
+    padding: var(--space-xl);
+    cursor: pointer;
+    transition: all 0.2s;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    background: var(--card-bg);
+}
+
+.topic-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: var(--border-color);
+    transition: var(--theme-transition);
+}
+
+.topic-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow);
+}
+
+.topic-card.selected {
+    background-color: var(--card-bg);
+    border-color: var(--primary);
+    box-shadow: 0 0 0 1px var(--primary);
+}
+
+.topic-card.selected::before {
+    background: var(--primary);
+}
+
+/* Expert-specific card colors */
+.topic-card[data-topic="chess"]::before { background: var(--expert-chess); }
+.topic-card[data-topic="photography"]::before { background: var(--expert-photography); }
+.topic-card[data-topic="f1"]::before { background: var(--expert-f1); }
+.topic-card[data-topic="fitness"]::before { background: var(--expert-fitness); }
+.topic-card[data-topic="tech"]::before { background: var(--expert-tech); }
+.topic-card[data-topic="custom"]::before { background: var(--expert-custom); }
+
+.topic-icon {
+    width: 64px;
+    height: 64px;
+    margin: 0 auto var(--space-lg);
+    border-radius: var(--radius-full);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--input-bg);
+    transition: var(--theme-transition);
+}
+
+.topic-icon svg {
+    width: 28px;
+    height: 28px;
+}
+
+/* Expert-specific icon colors */
+.topic-card[data-topic="chess"] .topic-icon svg { color: var(--expert-chess); }
+.topic-card[data-topic="photography"] .topic-icon svg { color: var(--expert-photography); }
+.topic-card[data-topic="f1"] .topic-icon svg { color: var(--expert-f1); }
+.topic-card[data-topic="fitness"] .topic-icon svg { color: var(--expert-fitness); }
+.topic-card[data-topic="tech"] .topic-icon svg { color: var(--expert-tech); }
+.topic-card[data-topic="custom"] .topic-icon svg { color: var(--expert-custom); }
+
+.topic-card h3 {
+    font-size: 1.125rem;
+    margin-bottom: var(--space-sm);
+    color: var(--text-color);
+    font-weight: 600;
+    transition: var(--theme-transition);
+}
+
+.topic-card p {
+    font-size: 0.875rem;
+    color: var(--text-secondary);
+    line-height: 1.5;
+    transition: var(--theme-transition);
+}
+
+/* Button Styles */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-sm);
+    color: white;
+    border: none;
+    border-radius: var(--radius);
+    padding: var(--space-md) var(--space-xl);
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s;
+    text-align: center;
+}
+
+.btn svg {
+    width: 20px;
+    height: 20px;
+}
+
+.primary-btn {
+    background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+    width: 100%;
+}
+
+.primary-btn:hover {
+    opacity: 0.9;
+    transform: translateY(-2px);
+    box-shadow: var(--shadow);
+}
+
+.secondary-btn {
+    background: var(--card-bg);
+    color: var(--primary);
+    border: 1px solid var(--primary);
+    width: 100%;
+    margin-top: var(--space-md);
+    transition: var(--theme-transition);
+}
+
+.secondary-btn:hover {
+    background: var(--input-bg);
+}
+
+.icon-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    border-radius: var(--radius-full);
+    background: transparent;
+    border: none;
+    color: var(--text-secondary);
+    cursor: pointer;
+    transition: var(--theme-transition);
+}
+
+.icon-btn:hover {
+    background: var(--input-bg);
+    color: var(--text-color);
+}
+
+.send-btn {
+    width: 48px;
+    height: 48px;
+    border-radius: var(--radius-full);
+    background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+    padding: 0;
+}
+
+.send-btn:hover {
+    transform: scale(1.05);
+}
+
+/* Error Message */
+.error-message {
+    color: var(--danger);
+    font-size: 0.875rem;
+    margin-top: var(--space-sm);
+}
+
+/* Custom Instructions */
+.custom-instructions {
+    margin-top: var(--space-lg);
+    display: none;
+}
+
+.custom-instructions.active {
+    display: block;
+}
+
+/* Chat Container */
+.setup-container {
+    width: 100%;
+    display: block;
+}
+
+.chat-container {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    height: 600px;
+}
+
+.chat-header {
+    padding: var(--space-lg) var(--space-xl);
+    border-bottom: 1px solid var(--border-color);
+    display: flex;
+    align-items: center;
+    gap: var(--space-md);
+    background: var(--card-bg);
+    transition: var(--theme-transition);
+}
+
+.chat-header-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: var(--radius-full);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--input-bg);
+    flex-shrink: 0;
+    transition: var(--theme-transition);
+}
+
+.chat-header-icon svg {
+    width: 20px;
+    height: 20px;
+}
+
+.chat-header-info {
+    flex: 1;
+}
+
+.chat-header-title {
+    font-weight: 600;
+    color: var(--text-color);
+    font-size: 1rem;
+    transition: var(--theme-transition);
+}
+
+.chat-header-status {
+    font-size: 0.75rem;
+    color: var(--secondary);
+    margin-top: 2px;
+}
+
+/* Chat Messages */
+.chat-messages {
+    flex: 1;
+    padding: var(--space-xl);
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-md);
+    background: var(--bg-color);
+    transition: var(--theme-transition);
+}
+
+.message {
+    max-width: 80%;
+    padding: var(--space-md) var(--space-lg);
+    border-radius: var(--radius-lg);
+    font-size: 0.9375rem;
+    line-height: 1.5;
+    animation: fadeIn 0.3s ease-out forwards;
+}
+
+.user-message {
+    margin-left: auto;
+    background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+    color: white;
+    border-radius: var(--radius-lg) var(--radius-lg) 0 var(--radius-lg);
+}
+
+.bot-message {
+    margin-right: auto;
+    background: var(--card-bg);
+    border-radius: var(--radius-lg) var(--radius-lg) var(--radius-lg) 0;
+    position: relative;
+    color: var(--text-color);
+    transition: var(--theme-transition);
+}
+
+.bot-message::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 4px;
+    border-radius: var(--radius-lg) 0 0 var(--radius-lg);
+}
+
+/* Expert-specific message styling */
+[data-topic="chess"] .bot-message::before { background: var(--expert-chess); }
+[data-topic="photography"] .bot-message::before { background: var(--expert-photography); }
+[data-topic="f1"] .bot-message::before { background: var(--expert-f1); }
+[data-topic="fitness"] .bot-message::before { background: var(--expert-fitness); }
+[data-topic="tech"] .bot-message::before { background: var(--expert-tech); }
+[data-topic="custom"] .bot-message::before { background: var(--expert-custom); }
+
+.bot-message p {
+    margin-bottom: var(--space-sm);
+}
+
+.bot-message strong {
+    font-weight: 600;
+    color: var(--text-color);
+}
+
+.bot-message ul, .bot-message ol {
+    margin-left: var(--space-lg);
+    margin-bottom: var(--space-sm);
+}
+
+.bot-message li {
+    margin-bottom: var(--space-xs);
+}
+
+/* Chat Input */
+.chat-input-container {
+    display: flex;
+    gap: var(--space-md);
+    padding: var(--space-md) var(--space-xl);
+    border-top: 1px solid var(--border-color);
+    align-items: center;
+    background: var(--card-bg);
+    transition: var(--theme-transition);
+}
+
+.input-wrapper {
+    flex: 1;
+    position: relative;
+}
+
+.input-actions {
+    position: absolute;
+    right: var(--space-md);
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    gap: var(--space-xs);
+}
+
+.chat-input {
+    padding-right: 80px;
+}
+
+/* Loading Spinner */
+.loading-spinner {
+    display: none;
+    width: 24px;
+    height: 24px;
+    border: 3px solid rgba(99, 102, 241, 0.2);
+    border-radius: 50%;
+    border-top-color: var(--primary);
+    animation: spin 1s linear infinite;
+    margin: var(--space-md) auto;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.fade-in {
+    animation: fadeIn 0.3s ease-out forwards;
+}
+
+/* Expert-specific theming */
+[data-topic="chess"] {
+    --primary: var(--expert-chess);
+    --primary-dark: #1D4ED8;
+    --primary-light: #BFDBFE;
+}
+
+[data-topic="photography"] {
+    --primary: var(--expert-photography);
+    --primary-dark: #7E22CE;
+    --primary-light: #E9D5FF;
+}
+
+[data-topic="f1"] {
+    --primary: var(--expert-f1);
+    --primary-dark: #B91C1C;
+    --primary-light: #FECACA;
+}
+
+[data-topic="fitness"] {
+    --primary: var(--expert-fitness);
+    --primary-dark: #047857;
+    --primary-light: #A7F3D0;
+}
+
+[data-topic="tech"] {
+    --primary: var(--expert-tech);
+    --primary-dark: #6D28D9;
+    --primary-light: #DDD6FE;
+}
+
+[data-topic="custom"] {
+    --primary: var(--expert-custom);
+    --primary-dark: #4F46E5;
+    --primary-light: #C7D2FE;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    body {
+        padding: var(--space-md);
+    }
+    
+    .container {
+        height: auto;
+        min-height: 90vh;
+    }
+    
+    .topics-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .header {
+        padding: var(--space-xl);
+    }
+    
+    .card {
+        padding: var(--space-lg);
+    }
+}
+
+@media (max-width: 480px) {
+    .chat-input-container {
+        padding: var(--space-md);
+    }
+    
+    .chat-messages {
+        padding: var(--space-lg);
+    }
+    
+    .theme-toggle {
+        top: var(--space-md);
+        right: var(--space-md);
+    }
+}

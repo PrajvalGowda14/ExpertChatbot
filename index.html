@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ExpertAI - Specialized Chat Assistants</title>
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%236366f1'><path d='M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 3c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3zm0 14.2c-2.5 0-4.71-1.28-6-3.22.03-1.99 4-3.08 6-3.08 1.99 0 5.97 1.09 6 3.08-1.29 1.94-3.5 3.22-6 3.22z'/></svg>">
+</head>
+<body>
+    <button class="theme-toggle" id="theme-toggle">
+        <svg id="theme-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+            <path id="theme-icon-path" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+        </svg>
+    </button>
+
+    <div class="container">
+        <!-- Setup Screen -->
+        <div class="setup-container">
+            <div class="header">
+                <div class="logo">
+                    <svg viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 3c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3zm0 14.2c-2.5 0-4.71-1.28-6-3.22.03-1.99 4-3.08 6-3.08 1.99 0 5.97 1.09 6 3.08-1.29 1.94-3.5 3.22-6 3.22z"/>
+                    </svg>
+                    <h1>ExpertAI</h1>
+                </div>
+                <p>Connect with specialized AI assistants for expert knowledge</p>
+            </div>
+
+            <div class="content">
+                <div class="card intro-card">
+                    <h2>Get Started</h2>
+                    <p>Welcome to ExpertAI! Enter your API key and choose a specialty to start chatting with our expert assistants.</p>
+                </div>
+
+                <div class="card">
+                    <h2><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm0 10.99h7c-.53 4.12-3.28 7.79-7 8.94V12H5V6.3l7-3.11V11.99z"/></svg> API Configuration</h2>
+                    <div class="input-group">
+                        <label for="api-key">Cohere API Key</label>
+                        <input type="password" id="api-key" placeholder="sk_xxxxxxxxxxxxxxxx">
+                        <div class="error-message" id="api-key-error"></div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <h2><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 3c-4.97 0-9 3.19-9 7 0 2.38 1.19 4.47 3 5.74V17c0 .55.45 1 1 1h1v3.5c0 .83.67 1.5 1.5 1.5s1.5-.67 1.5-1.5V18h2v3.5c0 .83.67 1.5 1.5 1.5s1.5-.67 1.5-1.5V18h1c.55 0 1-.45 1-1v-1.26c1.81-1.27 3-3.36 3-5.74 0-3.81-4.03-7-9-7z"/></svg> Choose Your Expert</h2>
+                    <div class="topics-grid">
+                        <!-- Chess Expert -->
+                        <div class="topic-card" data-topic="chess">
+                            <div class="topic-icon">
+                                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M19 22H5v-2h14v2M17.16 8.26A9.001 9.001 0 0 1 12 20c-2.9 0-5.44-1.37-7.08-3.5A9.001 9.001 0 0 1 9.54 6.63A3.62 3.62 0 0 1 12 2c1.5 0 2.5.5 3.5 2.32a3.62 3.62 0 0 1 1.66 3.94z"/></svg>
+                            </div>
+                            <h3>Chess Strategist</h3>
+                            <p>Master openings, tactics, and endgame strategies</p>
+                        </div>
+                        
+                        <!-- Photography Expert -->
+                        <div class="topic-card" data-topic="photography">
+                            <div class="topic-icon">
+                                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M4 4h3l2-2h6l2 2h3a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2zm8 3a5 5 0 1 0 0 10 5 5 0 0 0 0-10zm0 2a3 3 0 1 1 0 6 3 3 0 0 1 0-6z"/></svg>
+                            </div>
+                            <h3>Photography Pro</h3>
+                            <p>Camera tech, composition, and editing techniques</p>
+                        </div>
+                        
+                        <!-- F1 Expert -->
+                        <div class="topic-card" data-topic="f1">
+                            <div class="topic-icon">
+                                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.92 6.01C18.72 5.42 18.16 5 17.5 5h-11c-.66 0-1.21.42-1.42 1.01L3 12v8c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-1h12v1c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-8l-2.08-5.99zM6.85 7h10.29l1.08 3.11H5.77L6.85 7zM19 17H5v-5h14v5z"/></svg>
+                            </div>
+                            <h3>F1 Analyst</h3>
+                            <p>Race strategies, team dynamics, and car tech</p>
+                        </div>
+                        
+                        <!-- Fitness Expert -->
+                        <div class="topic-card" data-topic="fitness">
+                            <div class="topic-icon">
+                                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 3c-4.97 0-9 4.03-9 9s4.03 9 9 9 9-4.03 9-9-4.03-9-9-9zm0 16c-3.86 0-7-3.14-7-7s3.14-7 7-7 7 3.14 7 7-3.14 7-7 7zm1-11h-2v3H8v2h3v3h2v-3h3v-2h-3V8z"/></svg>
+                            </div>
+                            <h3>Fitness Coach</h3>
+                            <p>Workout plans, nutrition, and recovery advice</p>
+                        </div>
+                        
+                        <!-- Tech Expert -->
+                        <div class="topic-card" data-topic="tech">
+                            <div class="topic-icon">
+                                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm-1.06-5.17l-1.41-1.41 1.06-1.06 1.41 1.41 3.54-3.54 1.06 1.06-4.6 4.6zm-2.84-5.83h1.5v-1.5h-1.5v1.5zM10.5 8c0-.83.67-1.5 1.5-1.5s1.5.67 1.5 1.5-.67 1.5-1.5 1.5-1.5-.67-1.5-1.5z"/></svg>
+                            </div>
+                            <h3>Tech Advisor</h3>
+                            <p>Latest gadgets, software, and troubleshooting</p>
+                        </div>
+                        
+                        <!-- Custom Expert -->
+                        <div class="topic-card" data-topic="custom">
+                            <div class="topic-icon">
+                                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 15.5A3.5 3.5 0 0 1 8.5 12 3.5 3.5 0 0 1 12 8.5a3.5 3.5 0 0 1 3.5 3.5 3.5 3.5 0 0 1-3.5 3.5zm7.43-2.53c.04-.32.07-.64.07-.97 0-.33-.03-.66-.07-.97l2.11-1.65c.19-.15.24-.42.12-.64l-2-3.46c-.12-.22-.39-.3-.61-.22l-2.49 1c-.52-.4-1.08-.73-1.69-.98l-.38-2.65A.488.488 0 0 0 14 2h-4c-.25 0-.46.18-.49.42l-.38 2.65c-.61.25-1.17.59-1.69.98l-2.49-1c-.23-.09-.49 0-.61.22l-2 3.46c-.13.22-.07.49.12.64l2.11 1.65c-.04.31-.07.64-.07.97 0 .33.03.66.07.97l-2.11 1.65c-.19.15-.24.42-.12.64l2 3.46c.12.22.39.3.61.22l2.49-1c.52.4 1.08.73 1.69.98l.38 2.65c.03.24.24.42.49.42h4c.25 0 .46-.18.49-.42l.38-2.65c.61-.25 1.17-.59 1.69-.98l2.49 1c.23.09.49 0 .61-.22l2-3.46c.12-.22.07-.49-.12-.64l-2.11-1.65z"/></svg>
+                            </div>
+                            <h3>Custom Assistant</h3>
+                            <p>Create your own specialized AI helper</p>
+                        </div>
+                    </div>
+                    
+                    <select id="topic-select" style="display: none;">
+                        <option value="">Select a topic</option>
+                        <option value="chess">Chess Strategist</option>
+                        <option value="photography">Photography Pro</option>
+                        <option value="f1">F1 Analyst</option>
+                        <option value="fitness">Fitness Coach</option>
+                        <option value="tech">Tech Advisor</option>
+                        <option value="custom">Custom Assistant</option>
+                    </select>
+                    <div class="error-message" id="topic-error"></div>
+                    
+                    <div id="custom-instructions-container" class="custom-instructions">
+                        <label for="custom-instructions">Custom Instructions</label>
+                        <textarea id="custom-instructions" rows="4" placeholder="Describe what you want your assistant to specialize in..."></textarea>
+                    </div>
+                </div>
+
+                <button class="btn primary-btn" id="start-chat-btn">
+                    <span>Start Conversation</span>
+                    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M4 12v1.5h11.25l-4.5 4.5 1.5 1.5 6.75-6.75L12.75 5l-1.5 1.5 4.5 4.5H4z"/></svg>
+                </button>
+            </div>
+        </div>
+
+        <!-- Chat Screen -->
+        <div class="chat-container">
+            <div class="chat-header">
+                <div class="chat-header-icon" id="chat-header-icon">
+                    <!-- Icon will be inserted here -->
+                </div>
+                <div class="chat-header-info">
+                    <div class="chat-header-title" id="chat-header-title">
+                        <!-- Title will be inserted here -->
+                    </div>
+                    <div class="chat-header-status">Online</div>
+                </div>
+                <button class="icon-btn" id="minimize-btn">
+                    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M19 13H5v-2h14v2z"/></svg>
+                </button>
+            </div>
+            
+            <div class="chat-messages" id="chat-messages">
+                <!-- Messages will be inserted here -->
+            </div>
+            
+            <div class="loading-spinner" id="loading-spinner"></div>
+            
+            <div class="chat-input-container">
+                <div class="input-wrapper">
+                    <input type="text" id="chat-input" class="chat-input" placeholder="Message your expert...">
+                    <div class="input-actions">
+                        <button class="icon-btn">
+                            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 15c1.66 0 3-1.34 3-3V6c0-1.66-1.34-3-3-3S9 4.34 9 6v6c0 1.66 1.34 3 3 3z"/><path d="M17 12c0 2.76-2.24 5-5 5s-5-2.24-5-5H5c0 3.53 2.61 6.43 6 6.92V21h2v-2.08c3.39-.49 6-3.39 6-6.92h-2z"/></svg>
+                        </button>
+                        <button class="icon-btn">
+                            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"/></svg>
+                        </button>
+                    </div>
+                </div>
+                <button class="btn send-btn" id="send-btn">
+                    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/></svg>
+                </button>
+            </div>
+            
+            <button class="btn secondary-btn" id="reset-btn">
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 5V1L7 6l5 5V7c3.31 0 6 2.69 6 6s-2.69 6-6 6-6-2.69-6-6H4c0 4.42 3.58 8 8 8s8-3.58 8-8-3.58-8-8-8z"/></svg>
+                <span>New Conversation</span>
+            </button>
+        </div>
+    </div>
+
+    <script src="scripts/main.js"></script>
+</body>
+</html>
